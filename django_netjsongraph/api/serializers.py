@@ -9,12 +9,12 @@ class NetworkCollectionSerializer(serializers.ListSerializer):
     """
     @property
     def data(self):
-        return super(serializers.ListSerializer, self).data
+        return super().data
 
     def to_representation(self, data):
         return OrderedDict((
             ('type', 'NetworkCollection'),
-            ('collection', super(NetworkCollectionSerializer, self).to_representation(data))
+            ('collection', super().to_representation(data))
         ))
 
 
